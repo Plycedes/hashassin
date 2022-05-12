@@ -8,15 +8,18 @@ public class StartMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<AudioManager>().Play("menuClick");
     }
     public void Options()
     {
         settingsMenuUI.SetActive(true);
         startMenuUI.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("menuClick");
     }
     public void Quit()
     {
         Application.Quit();
         Debug.Log("Quit");
+        FindObjectOfType<AudioManager>().Play("menuClick");
     }
 }
